@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Piano Tutorial</title>
+</head>
+
+<body>
+    <div class="overlay">
+        <h1>Für Elise</h1>
+        <h3>Ludwig van Beethoven</h3>
+        <p>"Für Elise" is a famous piano piece composed by Ludwig van Beethoven in 1810. Officially titled Bagatelle No. 25 in A minor, it is one of his most well-known and beloved works. The piece features a light, lyrical main theme that contrasts with more dramatic sections. It was published after Beethoven’s death, and the identity of "Elise" remains uncertain. The music is often associated with romantic feelings and is commonly played by both beginner and advanced pianists.</p>
+        
+        <h3>How to play?</h3>
+        <p>Click the keys or use "123" to switch octaves, "FGHJKL;" for the white keys and "RTUIP" for the black keys.</p>
+        
+        <h3>Last Score</h3>
+        <h1 class="score">0</h1>
+
+        <button onclick="startGame()">Start Game</button>
+        <div class="qrcode">
+            <img src="./images/qrcode.png" width="100px" />
+            <p>Scan QR code to open in mobile.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="game-notes-container">
+            <div class="game-notes end">
+                <div class="white-notes"></div>
+                <div class="black-notes"></div>
+            </div>
+        </div>
+        <div class="piano-keys octave-4">
+            <div class="black-keys"></div>
+            <div class="white-keys"></div>
+        </div>
+        <div class="score">0</div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

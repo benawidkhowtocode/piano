@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'ShantellSans-Medium';
+    src: url('./fonts/ShantellSans-Medium.ttf') format('truetype');
+}
+
+* {
+    font-family: "ShantellSans-Medium";
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.game-notes-container {
+    height: 66vh;
+}
+
+.piano-keys {
+    height: 34vh;
+    overflow: hidden;
+    background-color: black;
+}
+
+.piano-keys > .black-keys,
+.piano-keys > .white-keys {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.piano-keys > .black-keys {
+    width: 102vw;
+    margin-left: -1vw;
+}
+
+.piano-keys > .black-keys > .keys {
+    background-color: #3f3f3f;
+    color: white;
+    width: 2vw;
+    text-align: center;
+    line-height: 30vh;
+    height: 20vh;
+    z-index: 2;
+}
+
+
+.piano-keys > .white-keys > .keys {
+    background-color: white;
+    color: black;
+    flex: 1;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 60vh;
+    height: 34vh;
+    margin-top: -20vh;
+    z-index: 1;
+}
+
+/* add border radius to the keys */
+.piano-keys .keys {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* currently active octave black keys */
+.piano-keys.octave-3 .black-keys .keys.octave-3,
+.piano-keys.octave-4 .black-keys .keys.octave-4,
+.piano-keys.octave-5 .black-keys .keys.octave-5 {
+    background-color: black;
+}
+
+/* currently active octave white keys */
+.piano-keys.octave-3 .white-keys .keys.octave-3,
+.piano-keys.octave-4 .white-keys .keys.octave-4,
+.piano-keys.octave-5 .white-keys .keys.octave-5 {
+    background-color: beige;
+}
+
+/* currently active octave white keys hover */
+.piano-keys.octave-3 .white-keys .keys.octave-3:hover,
+.piano-keys.octave-4 .white-keys .keys.octave-4:hover,
+.piano-keys.octave-5 .white-keys .keys.octave-5:hover {
+    background-color: white;
+}
+
+/* currently active octave black keys hover */
+.piano-keys.octave-3 .black-keys .keys.octave-3:hover,
+.piano-keys.octave-4 .black-keys .keys.octave-4:hover,
+.piano-keys.octave-5 .black-keys .keys.octave-5:hover {
+    background-color: #3f3f3f;
+}
+
+/* removes extra black keys */
+.piano-keys > .black-keys > div:nth-child(3),
+.piano-keys > .black-keys > div:nth-child(6),
+.piano-keys > .black-keys > div:nth-child(10),
+.piano-keys > .black-keys > div:nth-child(13),
+.piano-keys > .black-keys > div:nth-child(17),
+.piano-keys > .black-keys > div:nth-child(20)
+{
+    background-color: transparent !important;
+    color: transparent;
+}
+
+.game-notes {
+    overflow: hidden;
+    height: 960vh;
+}
+
+.game-notes > .black-notes,
+.game-notes > .white-notes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 0;
+    height: 960vh;
+}
+
+.game-notes > .black-notes {
+    width: 102vw;
+    margin-left: -1vw;
+    margin-top: -960vh;
+}
+
+.game-notes > .black-notes > div,
+.game-notes > .white-notes > div {
+    height: 100%;
+}
+
+
+.game-notes > .white-notes > div {
+    border: 1px solid silver;
+    flex: 1;
+}
+
+.game-notes > .black-notes > div {
+    width: 2vw;
+}
+
+.game-notes > .black-notes .note {
+    width: 100%;
+    height: 10vh;
+    background-color: dodgerblue;
+    border-radius: 5px;
+}
+
+.game-notes > .white-notes .note {
+    width: 100%;
+    height: 10vh;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.game-notes > .white-notes > div,
+.game-notes > .black-notes > div {
+    position: relative;
+}
+
+.game-notes .note {
+    position: absolute;
+}
+
+.game-notes.start {
+    transition: margin-top 240s linear;
+    margin-top: 0vh;
+}
+
+.game-notes.end {
+    transition: none;
+    margin-top: -894vh;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80vw;
+    background-color: black;
+    opacity: 0.95;
+    color: white;
+    z-index: 10;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 10vh;
+
+    text-align: center;
+}
+
+.overlay .qrcode {
+    position: fixed;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:800px)  { 
+    .overlay .qrcode {
+        display: none;
+    }
+}
+
+.container .score {
+    position: fixed;
+    bottom: 50vh;
+    text-align: center;
+    width: 100%;
+    font-size: 64px;
+    opacity: 0.5;
+}
