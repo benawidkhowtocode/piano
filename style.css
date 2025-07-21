@@ -209,6 +209,10 @@ body {
 }
 
 @media (max-width:800px)  { 
+    * {
+        font-size: 14px;
+    }
+
     .overlay .qrcode {
         display: none;
     }
