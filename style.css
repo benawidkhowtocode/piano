@@ -210,10 +210,20 @@ body {
 
 @media (max-width:800px)  { 
     * {
-        font-size: 14px;
+        font-size: 10px;
     }
 
-    .overlay .qrcode {
+    .overlay {
+        padding-top: 20px;
+    }
+
+    .overlay .row {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .overlay .hide-on-mobile {
         display: none;
     }
 }

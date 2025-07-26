@@ -91,7 +91,7 @@ const songNotes = [
     { note: '4A', time: 71, duration: 0.55 },
 ];
 
-const gameStartOffset = 33;
+const gameStartOffset = 20;
 
 let currentOctave = 4;
 let gameStartTime = 0;

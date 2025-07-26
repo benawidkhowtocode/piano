@@ -12,16 +12,23 @@
     <div class="overlay">
         <h1>Für Elise</h1>
         <h3>Ludwig van Beethoven</h3>
-        <p>"Für Elise" is a famous piano piece composed by Ludwig van Beethoven in 1810. Officially titled Bagatelle No. 25 in A minor, it is one of his most well-known and beloved works. The piece features a light, lyrical main theme that contrasts with more dramatic sections. The music is often associated with romantic feelings and is commonly played by both beginner and advanced pianists.</p>
-        
-        <h3>How to play?</h3>
-        <p>Click the keys or use "123" to switch octaves, "FGHJKL;" for the white keys and "RTUIP" for the black keys.</p>
-        
-        <h3>Last Score</h3>
-        <h1 class="score">0</h1>
+        <p>"Für Elise" is a famous piano piece composed by Ludwig van Beethoven in 1810. Officially titled Bagatelle No.
+            25 in A minor, it is one of his most well-known and beloved works. The piece features a light, lyrical main
+            theme that contrasts with more dramatic sections. The music is often associated with romantic feelings and
+            is commonly played by both beginner and advanced pianists.</p>
 
-        <button onclick="startGame()">Start Game</button>
-        <div class="qrcode">
+        <h3 class="hide-on-mobile">How to play?</h3>
+        <p class="hide-on-mobile">Click the keys or use "123" to switch octaves, "FGHJKL;" for the white keys and
+            "RTUIP" for the black keys.</p>
+        <div class="row">
+            <div>
+                <h3>Last Score</h3>
+                <h1 class="score">0</h1>
+            </div>
+            <button onclick="startGame()">Start Game</button>
+        </div>
+
+        <div class="qrcode hide-on-mobile">
             <img src="./images/qrcode.png" width="100px" />
             <p>Scan QR code to open in mobile.</p>
         </div>
