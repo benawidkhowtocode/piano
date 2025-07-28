@@ -36,14 +36,14 @@ body {
 }
 
 .piano-keys > .black-keys {
-    width: 102vw;
-    margin-left: -1vw;
+    width: 103vw;
+    margin-left: -1.5vw;
 }
 
 .piano-keys > .black-keys > .keys {
     background-color: #3f3f3f;
     color: white;
-    width: 2vw;
+    width: 3vw;
     text-align: center;
     line-height: 30vh;
     height: 20vh;
