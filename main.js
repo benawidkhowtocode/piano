@@ -217,7 +217,6 @@ function handleClickedKey(event) {
 
 function playAudio(audioElement) {
     checkScore(audioElement.id);
-    const isWhiteKey = audioElement.id.length == 2;
     audioElement.currentTime = 0;
     audioElement.play();
 }
