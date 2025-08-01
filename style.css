@@ -158,15 +158,20 @@ body {
     border-radius: 5px;
 }
 
+/* position relative is where the position of the absolute child element will 
+stay within the position of the parent element */
 .game-notes > .white-notes > div,
 .game-notes > .black-notes > div {
-    position: relative;
+    position: relative;  
 }
-
+ /* position absolute is where the child element will ignore any parent elements except for body or position
+ relative parent elements */ 
 .game-notes .note {
     position: absolute;
 }
 
+/* transition is where the css element property values is changed smoothly over a certain time
+the transition is for the notes to fall over 4 mins */
 .game-notes.start {
     transition: margin-top 240s linear;
     margin-top: 0vh;
@@ -208,6 +213,7 @@ body {
     align-items: center;
 }
 
+/* media query is css that will trigger up to 800px */
 @media (max-width:800px)  { 
     * {
         font-size: 10px;

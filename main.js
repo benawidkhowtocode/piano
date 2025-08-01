@@ -4,18 +4,6 @@ const whiteKeysText = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const blackKeysKBText = ['R', 'T', '', 'U', 'I', '', 'P'];
 const whiteKeysKBText = ['F', 'G', 'H', 'J', 'K', 'L', ';'];
 
-const blackKeysStartTime = [
-    1.8, 1.9, 0, 2, 2, 0, 2,
-    1.8, 1.8, 0, 1.95, 2, 0, 2,
-    1.8, 2, 0, 1.8, 1.8, 0, 1.8,
-    1.8
-];
-const whiteKeysStartTime = [
-    1.8, 1.8, 1.8, 1.8, 1.8, 1.5, 1.5,
-    2, 1.5, 1.5, 1.5, 1.5, 1.7, 1.5,
-    1.5, 1.5, 1.8, 2.5, 2, 1.6, 1.8
-];
-
 const songNotes = [
     { note: '5E', time: 0, duration: 0.55 },
     { note: '5Eb', time: 1, duration: 0.55 },
@@ -112,7 +100,7 @@ function setupPiano() {
     for (let i = 0; i < 22; i++) {  //starts keyboard at base octave 3 //there are 7 notes in each octve
         const octave = 3 + parseInt(i / 7); //to assign the correct octave number to each key (black or white) when creating the piano layout.
         const blackKey = document.createElement('div');
-        const key = blackKeysText[i % 7];
+        const key = blackKeysText[i % 7];   
         blackKey.innerText = blackKeysKBText[i % 7];
         blackKey.classList = "keys octave-" + octave;
 
@@ -230,12 +218,7 @@ function handleClickedKey(event) {
 function playAudio(audioElement) {
     checkScore(audioElement.id);
     const isWhiteKey = audioElement.id.length == 2;
-    // Set the starting position based on key type
-    if (isWhiteKey) {
-        audioElement.currentTime = whiteKeysStartTime[parseInt(audioElement.classList)];
-    } else {
-        audioElement.currentTime = blackKeysStartTime[parseInt(audioElement.classList)];
-    }
+    audioElement.currentTime = 0;
     audioElement.play();
 }
 
