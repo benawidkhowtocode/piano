@@ -293,8 +293,8 @@ function startGame() {
 function getGameNotes() {
     const gameNotes = document.getElementsByClassName('game-notes')[0];
     const computedStyle = window.getComputedStyle(gameNotes);
-    const viewHeight = window.innerHeight;
-    const marginInVH = parseFloat(computedStyle.getPropertyValue("margin-top").replace('px', '')) / viewHeight * 100;
+    const screenHeight = window.innerHeight;
+    const marginInVH = parseFloat(computedStyle.getPropertyValue("margin-top").replace('px', '')) / screenHeight * 100;
     const distanceTravelled = 894 + marginInVH - gameStartOffset;
     for (const note of songNotes) {
         if (note.time * 4 == parseInt(distanceTravelled)) {
