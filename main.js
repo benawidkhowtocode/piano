@@ -100,7 +100,7 @@ function setupPiano() {
     for (let i = 0; i < 22; i++) {  //starts keyboard at base octave 3 //there are 7 notes in each octve
         const octave = 3 + parseInt(i / 7); //to assign the correct octave number to each key (black or white) when creating the piano layout.
         const blackKey = document.createElement('div');
-        const key = blackKeysText[i % 7];   
+        const key = blackKeysText[i % 7];
         blackKey.innerText = blackKeysKBText[i % 7];
         blackKey.classList = "keys octave-" + octave;
 
@@ -294,7 +294,7 @@ function getGameNotes() {
     const gameNotes = document.getElementsByClassName('game-notes')[0];
     const computedStyle = window.getComputedStyle(gameNotes);
     const viewHeight = window.innerHeight;
-    const marginInVH = parseFloat(computedStyle.getPropertyValue("margin-top").replace('px','')) / viewHeight * 100;
+    const marginInVH = parseFloat(computedStyle.getPropertyValue("margin-top").replace('px', '')) / viewHeight * 100;
     const currentNoteVH = 894 + marginInVH - gameStartOffset;
     for (const note of songNotes) {
         if (note.time * 4 == parseInt(currentNoteVH)) {
@@ -310,6 +310,24 @@ function checkScore(key) {
     for (const scoreElement of document.getElementsByClassName("score")) {
         scoreElement.innerText = score;
     }
+}
+function showHistory() {
+    document.getElementById('tutorial-section').classList.add('hidden');
+    document.getElementById('game-container').classList.add('hidden');
+    document.getElementById('history-section').classList.remove('hidden');
+}
+
+function showNotes() {
+    document.getElementById('tutorial-section').classList.add('hidden');
+    document.getElementById('game-container').classList.add('hidden');
+    document.getElementById('notes-section').classList.remove('hidden');
+}
+
+function hideSubtopics() {
+    document.getElementById('tutorial-section').classList.remove('hidden');
+    document.getElementById('game-container').classList.remove('hidden');
+    document.getElementById('history-section').classList.add('hidden');
+    document.getElementById('notes-section').classList.add('hidden');
 }
 
 setupPiano();

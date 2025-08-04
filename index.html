@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <div class="overlay">
+    <!-- Tutorial Section -->
+    <div class="overlay" id="tutorial-section">
         <h1>Für Elise</h1>
         <h3>Ludwig van Beethoven</h3>
         <p>"Für Elise" is a famous piano piece composed by Ludwig van Beethoven in 1810. Officially titled Bagatelle No.
@@ -20,20 +21,25 @@
         <h3 class="hide-on-mobile">How to play?</h3>
         <p class="hide-on-mobile">Click the keys or use "123" to switch octaves, "FGHJKL;" for the white keys and
             "RTUIP" for the black keys.</p>
+
         <div class="row">
             <div>
                 <h3>Last Score</h3>
                 <h1 class="score">0</h1>
             </div>
+            <button onclick="showHistory()">View History of the Piano</button>
             <button onclick="startGame()">Start Game</button>
+             <button onclick="showNotes()">Learn Piano Notes</button>
         </div>
 
         <div class="qrcode hide-on-mobile">
-            <img src="./images/qrcode.png" width="100px" />
+            <img src="./images/qrcode.png" alt="QR Code" />
             <p>Scan QR code to open in mobile.</p>
         </div>
     </div>
-    <div class="container">
+
+    <!-- Game Container -->
+    <div class="container" id="game-container">
         <div class="game-notes-container">
             <div class="game-notes end">
                 <div class="white-notes"></div>
@@ -46,6 +52,38 @@
         </div>
         <div class="score">0</div>
     </div>
+
+    <!-- History Section -->
+    <div id="history-section" class="overlay hidden">
+        <h1>History of the Piano</h1>
+        <p>
+            The piano was invented around 1700 by Bartolomeo Cristofori in Italy. Unlike the harpsichord, which plucked strings,
+            the piano used hammers to strike them, enabling dynamic volume control.
+        </p>
+        <p>
+            Over time, the piano evolved into the grand and upright forms we recognize today. It became central to classical
+            music and later expanded into jazz, pop, and modern genres. Composers like Mozart, Beethoven, Chopin, and many more
+            contributed to its rise as a dominant instrument in Western music.
+        </p>
+        <button onclick="hideSubtopics()">← Back to Tutorial</button>
+    </div>
+    <!-- Notes Guide Section -->
+    <div id="notes-section" class="overlay hidden">
+        <h1>Learning Piano Notes</h1>
+        <p>
+            The piano keyboard is made up of white and black keys. Each key represents a musical note. The white keys follow the pattern:
+            A, B, C, D, E, F, G and then repeat.
+        </p>
+        <p>
+            The black keys are grouped in sets of twos and threes. Each black key is either a sharp (#) or flat (♭) note. For example, the black key after C is called C# (or D♭).
+        </p>
+        <p>
+            The note C is usually found just before the group of two black keys. Try to find and play all the C notes on the keyboard to start getting familiar!
+        </p>
+        <button onclick="hideSubtopics()">← Back to Tutorial</button>
+    </div>
+
+
     <script src="./main.js"></script>
 </body>
 

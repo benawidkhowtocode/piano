@@ -28,19 +28,19 @@ body {
     background-color: black;
 }
 
-.piano-keys > .black-keys,
-.piano-keys > .white-keys {
+.piano-keys>.black-keys,
+.piano-keys>.white-keys {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.piano-keys > .black-keys {
+.piano-keys>.black-keys {
     width: 103vw;
     margin-left: -1.5vw;
 }
 
-.piano-keys > .black-keys > .keys {
+.piano-keys>.black-keys>.keys {
     background-color: #3f3f3f;
     color: white;
     width: 3vw;
@@ -51,7 +51,7 @@ body {
 }
 
 
-.piano-keys > .white-keys > .keys {
+.piano-keys>.white-keys>.keys {
     background-color: white;
     color: black;
     flex: 1;
@@ -98,13 +98,12 @@ body {
 }
 
 /* removes extra black keys */
-.piano-keys > .black-keys > div:nth-child(3),
-.piano-keys > .black-keys > div:nth-child(6),
-.piano-keys > .black-keys > div:nth-child(10),
-.piano-keys > .black-keys > div:nth-child(13),
-.piano-keys > .black-keys > div:nth-child(17),
-.piano-keys > .black-keys > div:nth-child(20)
-{
+.piano-keys>.black-keys>div:nth-child(3),
+.piano-keys>.black-keys>div:nth-child(6),
+.piano-keys>.black-keys>div:nth-child(10),
+.piano-keys>.black-keys>div:nth-child(13),
+.piano-keys>.black-keys>div:nth-child(17),
+.piano-keys>.black-keys>div:nth-child(20) {
     background-color: transparent !important;
     color: transparent;
 }
@@ -114,8 +113,8 @@ body {
     height: 960vh;
 }
 
-.game-notes > .black-notes,
-.game-notes > .white-notes {
+.game-notes>.black-notes,
+.game-notes>.white-notes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -123,35 +122,35 @@ body {
     height: 960vh;
 }
 
-.game-notes > .black-notes {
+.game-notes>.black-notes {
     width: 103vw;
     margin-left: -1.5vw;
     margin-top: -960vh;
 }
 
-.game-notes > .black-notes > div,
-.game-notes > .white-notes > div {
+.game-notes>.black-notes>div,
+.game-notes>.white-notes>div {
     height: 100%;
 }
 
 
-.game-notes > .white-notes > div {
+.game-notes>.white-notes>div {
     border: 1px solid silver;
     flex: 1;
 }
 
-.game-notes > .black-notes > div {
+.game-notes>.black-notes>div {
     width: 3vw;
 }
 
-.game-notes > .black-notes .note {
+.game-notes>.black-notes .note {
     width: 100%;
     height: 10vh;
     background-color: dodgerblue;
     border-radius: 5px;
 }
 
-.game-notes > .white-notes .note {
+.game-notes>.white-notes .note {
     width: 100%;
     height: 10vh;
     background-color: orange;
@@ -160,12 +159,13 @@ body {
 
 /* position relative is where the position of the absolute child element will 
 stay within the position of the parent element */
-.game-notes > .white-notes > div,
-.game-notes > .black-notes > div {
-    position: relative;  
+.game-notes>.white-notes>div,
+.game-notes>.black-notes>div {
+    position: relative;
 }
- /* position absolute is where the child element will ignore any parent elements except for body or position
- relative parent elements */ 
+
+/* position absolute is where the child element will ignore any parent elements except for body or position
+ relative parent elements */
 .game-notes .note {
     position: absolute;
 }
@@ -214,7 +214,7 @@ the transition is for the notes to fall over 4 mins */
 }
 
 /* media query is css that will trigger up to 800px */
-@media (max-width:800px)  { 
+@media (max-width:800px) {
     * {
         font-size: 10px;
     }
@@ -241,4 +241,19 @@ the transition is for the notes to fall over 4 mins */
     width: 100%;
     font-size: 64px;
     opacity: 0.5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Ensure QR code area stays consistent */
+.qrcode {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qrcode img {
+    max-width: 100px;
+    height: auto;
 }
