@@ -295,9 +295,9 @@ function getGameNotes() {
     const computedStyle = window.getComputedStyle(gameNotes);
     const viewHeight = window.innerHeight;
     const marginInVH = parseFloat(computedStyle.getPropertyValue("margin-top").replace('px', '')) / viewHeight * 100;
-    const currentNoteVH = 894 + marginInVH - gameStartOffset;
+    const distanceTravelled = 894 + marginInVH - gameStartOffset;
     for (const note of songNotes) {
-        if (note.time * 4 == parseInt(currentNoteVH)) {
+        if (note.time * 4 == parseInt(distanceTravelled)) {
             return note.note;
         }
     }
